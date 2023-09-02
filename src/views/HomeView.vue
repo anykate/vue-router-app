@@ -11,12 +11,19 @@ const cars = computed(() => {
         ? carsData
         : carsData.filter((car) => car.make === make.value)
 })
+
+const handleChange = () => {
+    router.push({ query: { make: make.value } })
+}
 </script>
 
 <template>
     <main class="container">
         <h1>Our Cars</h1>
-        <select v-model="make">
+        <select
+            @change="handleChange"
+            v-model="make"
+        >
             <option value="All">All</option>
             <option value="Chevrolet">Chevy</option>
             <option value="Porsche">Porsche</option>
