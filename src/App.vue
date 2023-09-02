@@ -1,12 +1,12 @@
 <template>
     <div class="links">
         <RouterLink
-            to="/"
+            :to="{ name: 'Home' }"
             active-class="active"
             >Home</RouterLink
         >
         <RouterLink
-            to="/about"
+            :to="{ name: 'About' }"
             active-class="active"
             >About</RouterLink
         >
