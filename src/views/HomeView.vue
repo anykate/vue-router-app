@@ -1,14 +1,27 @@
 <script setup>
 import carsData from '@/assets/data.json'
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
-const cars = ref(carsData)
+
 const router = useRouter()
+const make = ref('All')
+
+const cars = computed(() => {
+    return make.value === 'All'
+        ? carsData
+        : carsData.filter((car) => car.make === make.value)
+})
 </script>
 
 <template>
     <main class="container">
         <h1>Our Cars</h1>
+        <select v-model="make">
+            <option value="All">All</option>
+            <option value="Chevrolet">Chevy</option>
+            <option value="Porsche">Porsche</option>
+            <option value="Audi">Audi</option>
+        </select>
         <div class="cards">
             <div
                 v-for="car in cars"
