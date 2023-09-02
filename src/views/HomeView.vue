@@ -1,7 +1,9 @@
 <script setup>
 import carsData from '@/assets/data.json'
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 const cars = ref(carsData)
+const router = useRouter()
 </script>
 
 <template>
@@ -12,6 +14,7 @@ const cars = ref(carsData)
                 v-for="car in cars"
                 :key="car.id"
                 class="card"
+                @click="router.push({ name: 'Car', params: { id: car.id } })"
             >
                 <h2>{{ car.make }}</h2>
                 <p>{{ car.price }}</p>
