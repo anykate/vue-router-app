@@ -12,9 +12,14 @@ const routes = [
         component: () => import('@/views/AboutView.vue'),
     },
     {
-        path: '/car/:id',
+        path: '/car/:id(\\d+)',
         name: 'Car',
         component: () => import('@/views/CarView.vue'),
+    },
+    {
+        path: '/:pathMatch(.*)*',
+        name: 'NotFound',
+        component: () => import('@/views/NotFound.vue'),
     },
 ]
 
