@@ -23,8 +23,41 @@ onBeforeMount(() => {
         <p>Body: {{ car.body }}</p>
         <p>Price: {{ car.price }}</p>
         <p>Year: {{ car.year }}</p>
+
+        <button @click="$router.push({ name: 'Home' })">Back to Home</button>
+
+        <div class="links">
+            <RouterLink
+                :to="{ name: 'Manufacturer' }"
+                active-class="active"
+                >Manufacturer
+            </RouterLink>
+            <RouterLink
+                :to="{ name: 'Dealer' }"
+                active-class="active"
+                >Dealer
+            </RouterLink>
+        </div>
+
+        <RouterView />
     </div>
+
     <div v-else>
         {{ router.push({ name: 'NotFound' }) }}
     </div>
 </template>
+
+<style scoped>
+button {
+    margin: 1rem 0;
+}
+.links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.active {
+    color: green;
+}
+</style>

@@ -15,6 +15,18 @@ const routes = [
         path: '/car/:id(\\d+)',
         name: 'Car',
         component: () => import('@/views/CarView.vue'),
+        children: [
+            {
+                path: 'manufacturer',
+                name: 'Manufacturer',
+                component: () => import('@/components/Manufacturer.vue'),
+            },
+            {
+                path: 'dealer',
+                name: 'Dealer',
+                component: () => import('@/components/Dealer.vue'),
+            },
+        ],
     },
     {
         path: '/:pathMatch(.*)*',
