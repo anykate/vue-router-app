@@ -19,12 +19,12 @@ const routes = [
             {
                 path: 'manufacturer',
                 name: 'Manufacturer',
-                component: () => import('@/components/Manufacturer.vue'),
+                component: () => import('@/components/TheManufacturer.vue'),
             },
             {
                 path: 'dealer',
                 name: 'Dealer',
-                component: () => import('@/components/Dealer.vue'),
+                component: () => import('@/components/TheDealer.vue'),
             },
         ],
     },

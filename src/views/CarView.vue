@@ -15,8 +15,8 @@ onBeforeMount(() => {
 
 <template>
     <div
-        class="container"
         v-if="car"
+        class="container"
     >
         <h1>Car View</h1>
         <p>Make: {{ car.make }}</p>
@@ -24,7 +24,7 @@ onBeforeMount(() => {
         <p>Price: {{ car.price }}</p>
         <p>Year: {{ car.year }}</p>
 
-        <button @click="$router.push({ name: 'Home' })">Back to Home</button>
+        <button @click="router.push({ name: 'Home' })">Back to Home</button>
 
         <div class="links">
             <RouterLink

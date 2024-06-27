@@ -13,7 +13,7 @@ const cars = computed(() => {
 })
 
 const handleChange = () => {
-    router.push({ query: { make: make.value } })
+    router.push({ name: 'Home', query: { make: make.value } })
 }
 </script>
 
@@ -21,8 +21,8 @@ const handleChange = () => {
     <main class="container">
         <h1>Our Cars</h1>
         <select
-            @change="handleChange"
             v-model="make"
+            @change="handleChange"
         >
             <option value="All">All</option>
             <option value="Chevrolet">Chevy</option>
