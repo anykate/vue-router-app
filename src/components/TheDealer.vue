@@ -7,6 +7,6 @@
 
 <style scoped>
 .dealer {
-    margin: 3rem 4rem;
+    margin: 3rem 0;
 }
 </style>
